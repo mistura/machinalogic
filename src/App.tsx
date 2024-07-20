@@ -1,6 +1,7 @@
 import { ConfigProvider } from "antd";
 import "./App.css";
 import Layout from "./pages/Layout";
+import Nav from "./pages/layout/Nav";
 
 function App() {
   return (
@@ -11,8 +12,10 @@ function App() {
         },
       }}
     >
-      {" "}
-      <Layout />
+      <div className="flex items-center bg-gray-100">
+        <Layout />
+        <Nav />
+      </div>
     </ConfigProvider>
   );
 }
