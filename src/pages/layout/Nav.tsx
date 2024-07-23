@@ -1,7 +1,5 @@
 import { FaX } from "react-icons/fa6";
 
-type Props = {};
-
 const navItems = [
   {
     label: "Home",
@@ -37,7 +35,7 @@ const navItems = [
   },
 ];
 
-const Nav = (props: Props) => {
+const Nav = () => {
   return (
     <nav className="fixed top-0 bg-[#2a2c39] bg-opacity-90 lg:bg-white lg:bg-opacity-100 lg:border-l border-gray-200 min-h-screen w-screen flex flex-col lg:items-start justify-center z-[99] p-6">
       <FaX

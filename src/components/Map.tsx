@@ -1,8 +1,6 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 
-type Props = {};
-
-const MapComponent = (props: Props) => {
+const MapComponent = () => {
   return (
     <div className="">
       <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>

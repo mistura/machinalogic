@@ -1,8 +1,6 @@
 import { AdjustedSectionLayout } from "./Industries";
 
-type Props = {};
-
-const Expertise = (props: Props) => {
+const Expertise = () => {
   const LeftChildren = () => {
     return (
       <div className="grid md:grid-cols-2 gap-4 lg:gap-0 h-full w-full">

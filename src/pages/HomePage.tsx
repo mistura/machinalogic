@@ -4,9 +4,7 @@ import Expertise from "../components/home/Expertise";
 import Hero from "../components/home/Hero";
 import Industries from "../components/home/Industries";
 
-type Props = {};
-
-const HomePage = (props: Props) => {
+const HomePage = () => {
   return (
     <div className="">
       <Hero />

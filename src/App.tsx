@@ -3,8 +3,6 @@ import Layout from "./pages/Layout";
 import Nav from "./pages/layout/Nav";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import HomePage from "./pages/HomePage";
-import Header from "./pages/layout/Header";
 
 function App() {
   // below listed default settings
