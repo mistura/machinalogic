@@ -38,27 +38,31 @@ const navItems = [
 ];
 
 const Nav = (props: Props) => {
-  const elements = document.getElementsByClassName("section-shrink");
-
   return (
-    <nav className="fixed -right-10 top-0 bg-white border-l border-gray-200 h-screen flex flex-col items-start z-50 p-6">
+    <nav className="fixed top-0 bg-[#2a2c39] bg-opacity-90 lg:bg-white lg:bg-opacity-100 lg:border-l border-gray-200 min-h-screen w-screen flex flex-col lg:items-start justify-center z-[99] p-6">
       <FaX
-        className="mb-20 text-4xl hover:text-red-600 "
+        className="absolute right-5 top-8 mb-20 place-self-end lg:place-self-start lg:left-5 text-xl lg:text-3xl text-white lg:text-black hover:text-red-600 cursor-pointer"
         onClick={() => {
           document
             .getElementsByTagName("nav")[0]
             .classList.remove("nav-active");
-          for (let i = 0; i < elements.length; i++) {
-            elements[i].classList.remove("menu-active");
-          }
+          document
+            .getElementsByClassName("shrink")[0]
+            .classList.remove("menu-active");
+          document
+            .getElementsByClassName("fa-bars")[0]
+            .classList.remove("hide-element");
+          document
+            .getElementsByClassName("large-screen-menu")[0]
+            .classList.remove("hide-element");
         }}
       />
-      <ol className="pl-10 grid gap-6">
+      <ol className="lg:pl-10 flex flex-col justify-center items-center lg:items-start w-full h-full  gap-6">
         {navItems.map((item) => (
           <li className="">
             <a
               href=""
-              className="font-bold uppercase text-gray-500 hover:text-secondary"
+              className="font-black lg:font-bold uppercase text-xl text-white lg:text-gray-500 hover:text-secondary"
             >
               {item.label}
             </a>

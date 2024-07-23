@@ -16,24 +16,50 @@
 body {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 2pt;
+  width: 100vw;
+  overflow-x: hidden !important;
 }
 
 .menu-active {
   transform-style: preserve-3d;
-  transform: rotateY(-40deg);
-  clip-path: polygon(0 0, 100% 20%, 100% 80%, 0% 100%);
+  transform: rotateY(40deg);
 }
 
-.section-shrink {
+.shrink {
   transition-duration: 0.3s;
   transform-origin: left;
 }
 
+.main-wrapper {
+  perspective: 200rem;
+  width: 100vw;
+}
+
 nav {
-  width: 0 !important;
+  top: 0 !important;
+  right: -120vw !important;
   transition-duration: 0.3s;
 }
 
 .nav-active {
-  width: 400px !important;
+  right: 0 !important;
+}
+
+.hide-bars {
+  opacity: 0 !important;
+}
+
+.hide-element {
+  opacity: 0 !important;
+}
+
+@media (min-width: 1024px) {
+  nav {
+    right: -120vw !important;
+  }
+
+  .nav-active {
+    width: 425px !important;
+    right: 0 !important;
+  }
 }
