@@ -1,18 +1,15 @@
-import React from "react";
-import Map from "react-map-gl";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 type Props = {};
 
 const MapComponent = (props: Props) => {
   return (
-    <Map
-      initialViewState={{
-        longitude: -100,
-        latitude: 40,
-        zoom: 3.5,
-      }}
-      mapStyle="mapbox://styles/mapbox/streets-v9"
-    />
+    <div className="">
+      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <Marker position={[51.505, -0.09]}></Marker>
+      </MapContainer>
+    </div>
   );
 };
 
