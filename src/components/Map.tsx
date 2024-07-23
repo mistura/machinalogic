@@ -1,14 +1,27 @@
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import "mapbox-gl/dist/mapbox-gl.css";
+import ReactMapGL, { Marker } from "react-map-gl";
 
-const MapComponent = () => {
+function MapComponent() {
   return (
     <div className="">
-      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <Marker position={[51.505, -0.09]}></Marker>
-      </MapContainer>
+      <ReactMapGL
+        // mapLib={import("mapbox-gl")}
+        initialViewState={{
+          longitude: 6.412332,
+          latitude: 4.09474,
+          zoom: 5,
+        }}
+        latitude={9.007906}
+        longitude={7.437959}
+        mapStyle="mapbox://styles/mapbox/light-v9"
+        mapboxAccessToken="pk.eyJ1IjoiYXllb2xha2VubnkiLCJhIjoiY2xyZzgycmR3MGJsNzJrcnY1d2hodXJhayJ9.xnOkZfILRcgpSeJDjkg91w"
+        style={{ height: "100vh", width: "100%" }}
+      >
+        {" "}
+        <Marker longitude={6.412332} latitude={4.09474}></Marker>
+      </ReactMapGL>
     </div>
   );
-};
+}
 
 export default MapComponent;

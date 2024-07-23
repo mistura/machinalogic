@@ -20,11 +20,6 @@ body {
   overflow-x: hidden !important;
 }
 
-.menu-active {
-  transform-style: preserve-3d;
-  transform: rotateY(40deg);
-}
-
 .shrink {
   transition-duration: 0.3s;
   transform-origin: left;
@@ -59,7 +54,12 @@ nav {
   }
 
   .nav-active {
-    width: 425px !important;
+    width: 30vw !important;
     right: 0 !important;
+  }
+
+  .menu-active {
+    transform-style: preserve-3d;
+    transform: rotateY(40deg);
   }
 }
