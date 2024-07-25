@@ -7,7 +7,7 @@ const navItems = [
   },
   {
     label: "Our company",
-    url: "/our-company",
+    url: "/about-us",
   },
   {
     label: "Industries",

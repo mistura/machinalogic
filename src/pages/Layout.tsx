@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage";
 import Header from "./layout/Header";
+import AboutUs from "./AboutUs";
 
 const Layout = () => {
   return (
@@ -8,6 +9,7 @@ const Layout = () => {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
     </div>
   );
