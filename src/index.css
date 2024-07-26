@@ -52,6 +52,13 @@ nav {
   font-size: 40px;
 }
 
+@media (max-width: 768px) {
+  .Typewriter {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
 @media (min-width: 1024px) {
   nav {
     right: -120vw !important;
@@ -66,4 +73,8 @@ nav {
     transform-style: preserve-3d;
     transform: rotateY(40deg);
   }
+}
+
+.page-section:nth-child(even) {
+  background: rgb(0, 0, 0, 0.06);
 }

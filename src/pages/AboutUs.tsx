@@ -1,7 +1,5 @@
-import { Button } from "antd";
-import { ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
-import Typewriter from "typewriter-effect";
+import { PageSectionLayout } from "./layout/PageSectionLayout";
+import { PageHero } from "./PageHero";
 
 const AboutUs = () => {
   const BodyText = () => {
@@ -52,6 +50,41 @@ const AboutUs = () => {
     );
   };
 
+  const items = [
+    {
+      title: "Who We are",
+      subtitle: "Your Trusted Partner in Advanced Cybersecurity Solutions.",
+      leftImage: "./about-one.png",
+      bodyText:
+        "At Machina Logic, we are dedicated to safeguarding your digital world. As a leading cybersecurity company, we specialize in providing cutting-edge solutions to protect your data and systems from evolving threats. Our team of experts leverages advanced technologies, including AI and machine learning, to deliver robust security measures tailored to your specific needs. With a commitment to innovation and excellence, Machina Logic ensures your organization's assets are secure, allowing you to focus on growth and success. Trust us to be your shield in the ever-changing landscape of cyber threats.",
+    },
+    {
+      title: "Our Mission",
+      subtitle:
+        "Empowering Your Digital Security with Innovation and Dedication.",
+      leftImage: "./about-two.png",
+      bodyText:
+        "At Machina Logic, our mission is to empower organizations with robust cybersecurity solutions that protect their digital assets and ensure business continuity. We are committed to delivering innovative, scalable, and reliable security measures tailored to the unique needs of each client. By leveraging advanced technologies and industry best practices, we strive to create a safer digital environment where businesses can thrive without fear of cyber threats.",
+      position: "inverse",
+    },
+    {
+      title: "Our Vision",
+      subtitle:
+        "Leading the Future of Cybersecurity with Excellence and Trust.",
+      leftImage: "./about-three.png",
+      bodyText:
+        "Our vision is to be the global leader in cybersecurity, recognized for our unwavering dedication to protecting the digital world. We aim to set new standards in the industry by continuously evolving our solutions to address emerging threats and by fostering a culture of security awareness and resilience. Through our expertise and innovation, we envision a future where every organization can operate securely and confidently in the digital age.",
+    },
+    {
+      title: "Our Expertise",
+      subtitle:
+        "Delivering Unmatched Cybersecurity Solutions Across Industries.",
+      leftImage: "./about-four.png",
+      bodyText: <BodyText />,
+      position: "inverse",
+    },
+  ];
+
   return (
     <div>
       <PageHero
@@ -66,124 +99,11 @@ const AboutUs = () => {
         ]}
         overlay
       />
-      <div className="flex items-center justify-center py-12 bg-white shadow-md">
-        <PageSection
-          leftImage="./about-one.png"
-          bodyText={
-            "At Machina Logic, we are dedicated to safeguarding your digital world. As a leading cybersecurity company, we specialize in providing cutting-edge solutions to protect your data and systems from evolving threats. Our team of experts leverages advanced technologies, including AI and machine learning, to deliver robust security measures tailored to your specific needs. With a commitment to innovation and excellence, Machina Logic ensures your organization's assets are secure, allowing you to focus on growth and success. Trust us to be your shield in the ever-changing landscape of cyber threats."
-          }
-          subtitle={"Your Trusted Partner in Advanced Cybersecurity Solutions."}
-          title={"Who We are"}
-        />
-      </div>
-      <div className="flex items-center justify-center py-12 ">
-        {" "}
-        <PageSection
-          position="inverse"
-          leftImage="./about-two.png"
-          bodyText={
-            "At Machina Logic, our mission is to empower organizations with robust cybersecurity solutions that protect their digital assets and ensure business continuity. We are committed to delivering innovative, scalable, and reliable security measures tailored to the unique needs of each client. By leveraging advanced technologies and industry best practices, we strive to create a safer digital environment where businesses can thrive without fear of cyber threats."
-          }
-          subtitle={
-            "Empowering Your Digital Security with Innovation and Dedication."
-          }
-          title={"Our Mission"}
-        />
-      </div>
-      <div className="flex items-center justify-center py-12 bg-white shadow-md">
-        {" "}
-        <PageSection
-          leftImage="./about-three.png"
-          bodyText={
-            "Our vision is to be the global leader in cybersecurity, recognized for our unwavering dedication to protecting the digital world. We aim to set new standards in the industry by continuously evolving our solutions to address emerging threats and by fostering a culture of security awareness and resilience. Through our expertise and innovation, we envision a future where every organization can operate securely and confidently in the digital age."
-          }
-          subtitle={
-            "Leading the Future of Cybersecurity with Excellence and Trust"
-          }
-          title={"Our Vision"}
-        />
-      </div>
-      <div className="flex items-center justify-center py-12">
-        {" "}
-        <PageSection
-          position="inverse"
-          leftImage="./about-four.png"
-          bodyText={<BodyText />}
-          subtitle={
-            "Delivering Unmatched Cybersecurity Solutions Across Industries"
-          }
-          title={"Our Expertise"}
-        />
+      <div className="">
+        <PageSectionLayout items={items} />
       </div>
     </div>
   );
 };
 
 export default AboutUs;
-
-export const PageHero = (props: {
-  title: string;
-  bgImg: string;
-  content: Array<string>;
-  overlay?: boolean;
-}) => {
-  return (
-    <div className="h-screen overflow-hidden flex flex-col items-center justify-center relative">
-      {props.overlay && (
-        <div className="bg-black h-screen w-screen absolute left-0 top-0 z-10 opacity-50"></div>
-      )}
-      <img
-        src={props.bgImg}
-        alt="machina logic cybersecurity company"
-        className="absolute top-0 left-0 object-cover object-center"
-      />
-      <div className="relative z-20 text-white font-bold tex-5xl grid gap-4">
-        <p className="text-center text-2xl uppercase text-secondary">
-          {props.title}
-        </p>
-        <Typewriter
-          options={{
-            strings: props.content,
-            autoStart: true,
-            loop: true,
-          }}
-        />
-      </div>
-    </div>
-  );
-};
-
-export const PageSection = (props: {
-  position?: string;
-  bodyText: ReactNode;
-  subtitle: string;
-  title: string;
-  leftImage: string;
-}) => {
-  return (
-    <div className="flex max-w-7xl w-full">
-      <div
-        className={twMerge(
-          "left basis-full flex flex-col items-start justify-center gap-4 px-4",
-          props.position?.toLowerCase() === "inverse" && "order-2"
-        )}
-      >
-        <h2 className="capitalize text-xl font-bold text-primary">
-          {props.title}
-        </h2>
-        <p className="-mt-3">{props.subtitle}</p>
-        <p className="text-justify text-gray-600">{props.bodyText}</p>
-        <Button type="primary" className="mt-4 h-9">
-          Get Started
-        </Button>
-      </div>
-      <div className="right basis-full flex items-center justify-center">
-        <img
-          src={props.leftImage}
-          alt="machina logic cybersecurity experts"
-          className=""
-        />
-      </div>
-    </div>
-  );
-};

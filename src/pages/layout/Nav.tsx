@@ -57,9 +57,9 @@ const Nav = () => {
       />
       <ol className="lg:pl-10 flex flex-col justify-center items-center lg:items-start w-full h-full  gap-6">
         {navItems.map((item) => (
-          <li className="">
+          <li className="" key={item.url}>
             <a
-              href=""
+              href={item.url}
               className="font-black lg:font-bold uppercase text-xl text-white lg:text-gray-500 hover:text-secondary"
             >
               {item.label}
