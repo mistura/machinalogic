@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 
 export const PageHero = (props: {
@@ -16,7 +17,12 @@ export const PageHero = (props: {
         alt="machina logic cybersecurity company"
         className="absolute top-0 left-0 object-cover object-center h-full w-full"
       />
-      <div className="relative z-20 text-white font-bold tex-5xl grid gap-4">
+      <motion.div
+        initial={{ y: 200 }}
+        whileInView={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 100 }}
+        className="relative z-20 text-white font-bold tex-5xl grid gap-4"
+      >
         <p className="text-center text-2xl uppercase text-secondary">
           {props.title}
         </p>
@@ -27,7 +33,7 @@ export const PageHero = (props: {
             loop: true,
           }}
         />
-      </div>
+      </motion.div>
     </div>
   );
 };

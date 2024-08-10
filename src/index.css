@@ -32,12 +32,12 @@ body {
 
 nav {
   top: 0 !important;
-  right: -120vw !important;
+  display: none !important;
   transition-duration: 0.3s;
 }
 
 .nav-active {
-  right: 0 !important;
+  display: flex !important;
 }
 
 .hide-bars {

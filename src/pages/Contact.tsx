@@ -1,6 +1,8 @@
 import { FaEnvelope, FaMapLocation, FaPhone } from "react-icons/fa6";
-import Map from "../Map";
-import { AdjustedSectionLayout } from "./Industries";
+import { AdjustedSectionLayout } from "../components/home/Industries";
+import Map from "../components/Map";
+import ContactForm from "../components/ContactForm";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const Extra = () => {
@@ -26,20 +28,31 @@ const Contact = () => {
       </div>
     );
   };
+
   return (
-    <div className="py-24">
+    <div className="bg-gray-200 pt-24 flex flex-col justify-center gap-[120px] min-h-screen">
       {" "}
       <AdjustedSectionLayout
         logo="./logo.png"
         textBg="text-black"
         textColor="text-black"
         btnStyle="bg-darkgray text-white"
-        leftChildren={<Map />}
+        leftChildren={<ContactForm />}
+        //align="top"
         textOne={"Get In"}
         textTwo={"touch"}
         extra={<Extra />}
         showButton={false}
       />
+      <motion.div
+        initial={{ y: 200 }}
+        whileInView={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
+        className=""
+      >
+        {" "}
+        <Map />
+      </motion.div>
     </div>
   );
 };

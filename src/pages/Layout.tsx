@@ -4,6 +4,7 @@ import Header from "./layout/Header";
 import AboutUs from "./AboutUs";
 import Industries from "./Industries";
 import Solutions from "./Solutions";
+import Contact from "./Contact";
 
 const Layout = () => {
   return (
@@ -14,6 +15,7 @@ const Layout = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/solutions" element={<Solutions />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>
   );

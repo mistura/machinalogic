@@ -1,4 +1,5 @@
 import { Button } from "antd";
+import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -7,7 +8,7 @@ const Industries = () => {
     { label: "Government", icon: "./govt.jpg" },
     { label: "Oil and gas", icon: "./oil.png" },
     { label: "Banking", icon: "./bank.png" },
-    { label: "Aviation", icon: "./govt.jpg" },
+    { label: "Aviation", icon: "./industries/aviation.png" },
   ];
   const LeftChildren = () => {
     return (
@@ -15,7 +16,15 @@ const Industries = () => {
         className={`flex flex-col md:grid md:grid-cols-2 gap-4 lg:gap-0 h-full w-full`}
       >
         {items.map((item) => (
-          <div
+          <motion.div
+            initial={{ y: 200 }}
+            whileInView={{ y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              delay: 0,
+              restSpeed: 0.5,
+            }}
             key={item.label}
             className={twMerge(
               `rounded-md lg:rounded-none overflow-hidden bg-white flex flex-col items-center justify-center hover:scale-90 duration-200 ease-in-out`,
@@ -40,7 +49,7 @@ const Industries = () => {
               alt={item.label}
               className="h-auto w-full object-contain mt-4"
             />
-          </div>
+          </motion.div>
         ))}
       </div>
     );
@@ -48,6 +57,7 @@ const Industries = () => {
 
   return (
     <AdjustedSectionLayout
+      link="industries"
       leftChildren={<LeftChildren />}
       textOne={"industries"}
       textTwo={"we serve"}
@@ -68,6 +78,9 @@ export const AdjustedSectionLayout = (props: {
   textTwo: string;
   bg?: string;
   logo?: string;
+  showButton?: boolean;
+  link?: string;
+  align?: string;
 }) => {
   return (
     <div
@@ -76,8 +89,16 @@ export const AdjustedSectionLayout = (props: {
         props.bg
       )}
     >
-      <div className=" w-full h-full grid lg:grid-cols-2 gap-28 items-center justify-between">
-        <div
+      <div
+        className={twMerge(
+          " w-full h-full grid lg:grid-cols-2 gap-28 items-center justify-between",
+          props.align && "items-start"
+        )}
+      >
+        <motion.div
+          initial={{ x: 200 }}
+          whileInView={{ x: 0 }}
+          transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
           className={twMerge(
             "grid gap-6 lg:pl-12 xl:justify-center text-white",
             props.textColor
@@ -100,19 +121,28 @@ export const AdjustedSectionLayout = (props: {
               ></div>
             </span>
           </p>
-          <Button
-            className={twMerge(
-              "w-[164px] h-12 font-bold text-base mt-8",
-              props.btnStyle
-            )}
-          >
-            <a href={"/"} className="font-semibold text-center ">
-              Learn More
-            </a>
-          </Button>
+          {props.showButton !== false && (
+            <Button
+              className={twMerge(
+                "w-[164px] h-12 font-bold text-base mt-8",
+                props.btnStyle
+              )}
+            >
+              <a href={props.link} className="font-semibold text-center ">
+                Learn More
+              </a>
+            </Button>
+          )}
           {props.extra}
-        </div>
-        {props.leftChildren}
+        </motion.div>
+        <motion.div
+          initial={{ x: -200 }}
+          whileInView={{ x: 0 }}
+          transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
+          className=""
+        >
+          {props.leftChildren}
+        </motion.div>
       </div>
     </div>
   );

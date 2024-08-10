@@ -1,3 +1,4 @@
+import { useTitle } from "../hooks/useTitle";
 import { PageSectionLayout } from "./layout/PageSectionLayout";
 import { PageHero } from "./PageHero";
 
@@ -42,6 +43,7 @@ const items = [
 ];
 
 const Industries = () => {
+  useTitle("Industries");
   return (
     <div>
       <PageHero

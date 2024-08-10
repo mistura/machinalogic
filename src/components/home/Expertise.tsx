@@ -17,6 +17,7 @@ const Expertise = () => {
   return (
     <div className="w-screen bg-red-600 flex flex-col items-center justify-center">
       <AdjustedSectionLayout
+        link="solutions"
         leftChildren={<LeftChildren />}
         textOne={"our"}
         textTwo={"expertise"}

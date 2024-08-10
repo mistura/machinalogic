@@ -19,7 +19,7 @@ const About = () => {
               protection, risk assessment and incident report.
             </p>
             <Button className="lg:hidden px-4 w-[164px] h-12 font-bold text-base mt-12">
-              <a href={"/about"} className="">
+              <a href={"/about-us"} className="">
                 Learn More
               </a>
             </Button>

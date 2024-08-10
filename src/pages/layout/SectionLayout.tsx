@@ -1,17 +1,23 @@
 import { Button } from "antd";
+import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
-type Props = {
+interface Props {
   textOne: string;
   textTwo: string;
   leftChildren: ReactNode;
   url: string;
-};
+}
 
 const SectionLayout = (props: Props) => {
   return (
     <div className="max-w-7xl w-full grid lg:grid-cols-2 items-center justify-between ">
-      <div className="grid gap-12 xl:gap-6 text-white lg:pl-12">
+      <motion.div
+        initial={{ y: 200 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.2 }}
+        className="grid gap-12 xl:gap-6 text-white lg:pl-12"
+      >
         <img
           src={"./logo-white.png"}
           alt="machina logic cybersecurity company"
@@ -28,8 +34,15 @@ const SectionLayout = (props: Props) => {
             Learn More
           </a>
         </Button>
-      </div>
-      <div className="mt-4 md:mt-0">{props.leftChildren}</div>
+      </motion.div>
+      <motion.div
+        initial={{ y: -200 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.2 }}
+        className="mt-4 md:mt-0"
+      >
+        {props.leftChildren}
+      </motion.div>
     </div>
   );
 };
