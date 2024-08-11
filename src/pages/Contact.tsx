@@ -30,7 +30,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-gray-200 pt-24 flex flex-col justify-center gap-[120px] min-h-screen">
+    <div className="bg-gray-200 pt-24 w-full flex flex-col justify-center items-center gap-[120px] min-h-screen">
       {" "}
       <AdjustedSectionLayout
         logo="./logo.png"

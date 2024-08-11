@@ -9,9 +9,13 @@ const PageSection = (props: {
   subtitle: string;
   title: string;
   leftImage: string;
+  id?: string;
 }) => {
   return (
-    <div className="page-section min-h-screen shadow-md w-full flex flex-col items-center justify-center">
+    <div
+      id={props.id}
+      className="page-section min-h-screen shadow-md w-full flex flex-col items-center justify-center"
+    >
       <div className="flex flex-col md:flex-row gap-6 md:gap-0 max-w-7xl w-full py-12">
         <motion.div
           initial={{ x: -200 }}
@@ -28,7 +32,7 @@ const PageSection = (props: {
           <p className="-mt-3  text-center md:text-left">{props.subtitle}</p>
           <p className="text-justify text-gray-600">{props.bodyText}</p>
           <Button type="primary" className="mt-4 h-9">
-            Get Started
+            <a href="/contact"> Get Started</a>
           </Button>
         </motion.div>
         <motion.div

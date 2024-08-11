@@ -104,7 +104,7 @@ const Contact = () => {
 
   return (
     <AnimatePresence>
-      <form className="flex flex-col items-start gap-4 md:gap-8 max-w-[600px] w-full bg-white p-6 py-12 rounded-xl shadow-xl">
+      <form className="flex flex-col items-start gap-4 md:gap-8 max-w-[600px] w-full p-6 py-12 rounded-xl ">
         <div className="text-center w-full py-4  rounded">
           <p className="text-3xl md:text-2xl font-semibold">Send A Mail</p>
           <p className=" mt-1 md:text-base text-primary">

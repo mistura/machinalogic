@@ -8,12 +8,14 @@ export const PageSectionLayout = (props: {
     subtitle: string;
     title: string;
     position?: string;
+    id?: string;
   }>;
 }) => {
   return (
     <div className="flex flex-col items-center justify-center page-section-layout ">
       {props.items.map((item) => (
         <PageSection
+          id={item.id}
           key={item.title}
           leftImage={item.leftImage}
           bodyText={item.bodyText}

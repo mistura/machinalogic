@@ -15,6 +15,7 @@ const items = [
     bodyText:
       "Our core focus is on providing top-notch cybersecurity services to safeguard your organization's data and systems. We specialize in advanced threat detection, vulnerability management, and comprehensive data protection strategies. With Machina Logic, you can be confident that your digital environment is secure against a constantly evolving landscape of cyber threats.",
     position: "inverse",
+    id: "cybersecurity",
   },
   {
     title: "Artificial Intelligence",
@@ -22,6 +23,7 @@ const items = [
     leftImage: "./solutions/ai.svg",
     bodyText:
       "Artificial Intelligence (AI) is at the heart of our cybersecurity solutions. We use AI and machine learning to identify and neutralize threats in real-time, predict potential vulnerabilities, and automate response actions. Our AI-driven security solutions provide an unparalleled level of protection, ensuring that your organization stays ahead of cyber adversaries.",
+    id: "ai",
   },
   {
     title: "Software Development",
@@ -30,6 +32,7 @@ const items = [
     bodyText:
       "At Machina Logic, we understand the importance of security in application development. Our team specializes in creating secure, scalable, and resilient applications tailored to your business needs. We integrate robust security measures throughout the development lifecycle, ensuring that your applications are protected against threats from the ground up.",
     position: "inverse",
+    id: "software-development",
   },
   {
     title: "Digital Transformation",
@@ -37,6 +40,7 @@ const items = [
     leftImage: "./solutions/digital-transformation.svg",
     bodyText:
       "Digital transformation is essential for staying competitive in today's fast-paced market. Machina Logic provides cybersecurity solutions that enable your organization to embrace digital transformation securely. From cloud migration to the implementation of digital technologies, we ensure that your transformation journey is protected against cyber threats, allowing you to innovate with confidence.",
+    id: "digital-transformation",
   },
 ];
 

@@ -5,6 +5,7 @@ import AboutUs from "./AboutUs";
 import Industries from "./Industries";
 import Solutions from "./Solutions";
 import Contact from "./Contact";
+import Footer from "./layout/Footer";
 
 const Layout = () => {
   return (
@@ -17,6 +18,7 @@ const Layout = () => {
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
