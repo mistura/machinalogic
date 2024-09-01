@@ -3,7 +3,7 @@ import Logo from "../../../public/Logos/Machina Logic.png";
 
 const Header = () => {
   return (
-    <div className="bg-[#f3f4f6] py-2 px-4 flex flex-col items-center justify-center fixed top-0 left-0 w-screen z-50">
+    <div className=" bg-gradient-to-r from-blue-50 to-blue-100 py-2 px-4 flex flex-col items-center justify-center fixed top-0 left-0 w-screen z-50">
       <div className="max-w-7xl w-full flex justify-between items-center lg:items-start">
         <div className="">
           <a href="/">
@@ -11,7 +11,7 @@ const Header = () => {
             <img
               src={Logo}
               alt="machina logics cybersecurity"
-              className="max-w-[180px] md:max-w-[200px] w-full"
+              className="max-w-[180px] md:max-w-[250px] w-full"
             />
           </a>
         </div>
