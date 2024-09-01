@@ -15,7 +15,7 @@ const navItems = [
     url: "/industries",
   },
   {
-    label: "Services",
+    label: "Solutions",
     url: "/solutions",
   },
   // {
