@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FaMapMarked } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import Logo from "../../../public/logo-white.png";
+import Logo from "../../../public/newLogo-removebg-preview.png";
 import FooterMenuItem from "../../components/FooterMenuItem";
 
 const Footer = () => {
@@ -13,7 +13,6 @@ const Footer = () => {
         { label: "Home", value: "/" },
         { label: "About", value: "/about-us" },
         { label: "Industries", value: "/industries" },
-        { label: "Services", value: "/services" },
         { label: "Services", value: "/services" },
         { label: "Contact", value: "/contact" },
       ],
@@ -28,18 +27,17 @@ const Footer = () => {
       ],
     },
     {
-      title: "Services",
+      title: "Solutions",
       data: [
-        { label: "Cybersecurity", value: "/solutions#cybersecurity" },
-        { label: "Artificial Intellingence", value: "/solutions#ai" },
-        {
-          label: "Software Development",
-          value: "/solutions#software-development",
+        { label: "OT Cybersecurity", value: "/solutions#cybersecurity" },
+        { label: "IT Cybersecurity", value: "/solutions#cybersecurity" },
+        { label: "Network Management", value: "/solutions#ai" },
+        { label: "Fibre Deployment & Operations",value: "/solutions#software-development",
         },
-        {
-          label: "Digital Transformation",
-          value: "/solutions#digital-transformation",
-        },
+        // {
+        //   label: "Digital Transformation",
+        //   value: "/solutions#digital-transformation",
+        // },
       ],
     },
   ];
@@ -63,14 +61,14 @@ const Footer = () => {
       initial={{ y: 200, opacity: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
-      className="p-4 py-8 xl:py-24 bg-gradient-to-br from-gray-950  to-blue-950 w-screen xl:flex flex-col justify-center items-center"
+      className="p-4 py-8 xl:py-24 bg-gradient-to-br from-[#2A2C39] to-blue-950 w-screen xl:flex flex-col justify-center items-center"
     >
       <div className="max-w-7xl w-full flex flex-col items-start lg:grid grid-cols-6 gap-6">
         <div className="space-y-4 col-span-2 pt-12 lg:pt-0">
           <img
             src={Logo}
             alt="machina logics"
-            className="max-w-[250px] lg:max-w-[150px]"
+            className="max-w-[250px] lg:max-w-[180px]"
           />
           <p className="text-gray-300">
             Machina Logic is your number one cybersecurity solutions company

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="flex items-center justify-center gap-4 min-h-screen bg-gradient-to-br from-blue-50 to-blue-200 section-shrink p-4">
+    <div className="flex pt-[100px] items-center justify-center gap-4 min-h-screen header-gradient section-shrink p-4">
       <div className="max-w-7xl basis-full w-full flex flex-col items-center lg:grid grid-cols-2 pt-24 md:pt-0 pb-12">
         <motion.div
           initial={{ x: -500 }}
@@ -14,15 +14,13 @@ const Hero = () => {
           className="flex flex-col items-center lg:items-baseline gap-6 lg:px-4"
         >
           {/* <LogoComponent /> */}
-          <h2 className="text-center lg:text-left font-bold md:font-black lg:font-bold xl:font-black text-blue-700 text-4xl md:text-[52px] mt-6 lg:mt-0 leading-tight">
-            Secure your
-            <br /> Digital Ecosystem
+          <h2 className=" text-center lg:text-left font-bold md:font-black lg:font-bold xl:font-black text-white text-4xl md:text-[52px] mt-6 lg:mt-0 leading-tight">
+            Secure Africa's Critical <br/> Infrastructure with OT Cybersecurity
             {/* <span className="text-7xl leading-none">.</span> */}
           </h2>
-          <p className="text-lg text-center lg:text-left">
-            Safeguard your entire digital assets with our cutting-edge
-            cybersecurity solutions, designed to protect against evolving
-            threats, ensuring resilience, privacy and uninterrupted operations.
+          <p className="text-lg text-center text-white lg:text-left">
+           “Safeguard your OT systems from rising threats. As Nigeria’s 
+           leading OT provider, we protect ICS/SCADA in oil & gas, utilities, and more with integrated IT, network, and fiber solutions.”
           </p>
 
           <div className="flex items-center gap-6 mt-6">
@@ -49,7 +47,7 @@ const Hero = () => {
           <img
             src="./hero.png"
             alt="machina logic"
-            className="max-w-[380px] xl:max-w-[500px] h-auto hero-img mt-24 lg:mt-0 drop-shadow-2xl"
+            className="max-w-[450px] bor xl:max-w-[500px] h-auto hero-img mt-5 lg:mt-0 drop-shadow-2xl"
           />
         </motion.div>
       </div>
