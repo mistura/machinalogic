@@ -26,7 +26,7 @@ const Header = () => {
 
           {/* Search Icon */}
           <SiSearxng
-            className="text-white text-3xl absolute md:right-[90px] right-[50px] md:top-5 top-4 hover:text-[#080827] cursor-pointer duration-300 ease-in-out"
+            className="text-white text-3xl absolute md:right-[90px] right-[50px] md:top-4 top-4 hover:text-[#080827] cursor-pointer duration-300 ease-in-out"
             onClick={() => setShowSearch((prev) => !prev)}
           />
 
