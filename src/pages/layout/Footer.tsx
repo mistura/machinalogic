@@ -61,7 +61,7 @@ const Footer = () => {
       initial={{ y: 200, opacity: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
-      className="p-4 py-8 xl:py-24 bg-gradient-to-br from-[#2A2C39] to-blue-950 w-screen xl:flex flex-col justify-center items-center"
+      className="p-4 py-8 xl:py-24 footer-gradient w-screen xl:flex flex-col justify-center items-center"
     >
       <div className="max-w-7xl w-full flex flex-col items-start lg:grid grid-cols-6 gap-6">
         <div className="space-y-4 col-span-2 pt-12 lg:pt-0">
@@ -105,7 +105,7 @@ const Footer = () => {
           className="place-self-center bg-white text-black px-2 py-1 rounded-full text-center mt-8 max-w-[600px] w-full font-semibold"
         >
           Copyright{" "}
-          <span className="uppercase font-extrabold text-primary">
+          <span className="uppercase font-extrabold text-[#00BFFF]">
             @MachinaLogic
           </span>{" "}
           {new Date().getFullYear()}

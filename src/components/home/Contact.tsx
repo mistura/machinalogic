@@ -1,28 +1,30 @@
 import { FaEnvelope, FaMapLocation, FaPhone } from "react-icons/fa6";
 import Map from "../Map";
 import { AdjustedSectionLayout } from "./Industries";
+import "mapbox-gl/dist/mapbox-gl.css";
+import ReactMapGL, { Marker } from "react-map-gl";
+
 
 const Contact = () => {
   const Extra = () => {
     return (
-      <div className="grid gap-6 mt-6">
-        <a
-          href="mailto:info@machinalogic.com"
-          className="text-gray-500 flex items-center gap-6"
-        >
-          <FaEnvelope className="text-xl" /> info@machinalogic.com
-        </a>
-
-        <p className="text-gray-500 flex items-center gap-6">
-          <FaMapLocation className="text-xl" />
-          No. 12 ABC Road, off MNO Avenue,
-          <br /> 6th floor, XYZ towers, Lagos State, <br /> Nigeria.
-        </p>
-
-        <p className="text-gray-500 flex items-center gap-6">
-          <FaPhone className="text-xl" />
-          +1234567890
-        </p>
+      <div className=" grid gap-6 mt-6">
+         <ReactMapGL
+               // mapLib={import("mapbox-gl")}
+               initialViewState={{
+                 longitude: 6.412332,
+                 latitude: 4.09474,
+                 zoom: 5,
+               }}
+               latitude={9.007906}
+               longitude={7.437959}
+               mapStyle="mapbox://styles/mapbox/light-v9"
+               mapboxAccessToken="pk.eyJ1IjoiYXllb2xha2VubnkiLCJhIjoiY2xyZzgycmR3MGJsNzJrcnY1d2hodXJhayJ9.xnOkZfILRcgpSeJDjkg91w"
+               style={{ height: "50vh", width: "90%" }}
+             >
+               {" "}
+               <Marker longitude={6.412332} latitude={4.09474}></Marker>
+             </ReactMapGL>
       </div>
     );
   };
@@ -30,7 +32,8 @@ const Contact = () => {
     <div className="py-24">
       {" "}
       <AdjustedSectionLayout
-        logo="./logo.png"
+        logo="/newLogo-removebg-preview.png"
+        bg="#C8C8C9"
         textBg="text-black"
         textColor="text-black"
         btnStyle="bg-darkgray text-white"
@@ -38,7 +41,8 @@ const Contact = () => {
         textOne={"Get In"}
         textTwo={"touch"}
         extra={<Extra />}
-        showButton={false}
+        showButton={false} 
+        sectionBg={""}        
       />
     </div>
   );

@@ -1,25 +1,58 @@
+import { Button, Form, Input } from "antd";
 import "mapbox-gl/dist/mapbox-gl.css";
-import ReactMapGL, { Marker } from "react-map-gl";
+import {
+  FaArrowCircleRight,
+  FaEnvelope,
+  FaPhone,
+  FaUser,
+} from "react-icons/fa";
+import { FaMapLocation } from "react-icons/fa6";
+import { MdMarkEmailUnread } from "react-icons/md";
+
+const { TextArea } = Input;
 
 function MapComponent() {
   return (
-    <div className="">
-      <ReactMapGL
-        // mapLib={import("mapbox-gl")}
-        initialViewState={{
-          longitude: 6.412332,
-          latitude: 4.09474,
-          zoom: 5,
-        }}
-        latitude={9.007906}
-        longitude={7.437959}
-        mapStyle="mapbox://styles/mapbox/light-v9"
-        mapboxAccessToken="pk.eyJ1IjoiYXllb2xha2VubnkiLCJhIjoiY2xyZzgycmR3MGJsNzJrcnY1d2hodXJhayJ9.xnOkZfILRcgpSeJDjkg91w"
-        style={{ height: "100vh", width: "100%" }}
-      >
-        {" "}
-        <Marker longitude={6.412332} latitude={4.09474}></Marker>
-      </ReactMapGL>
+    <div className="px-24 space-y-4 text-black ">
+      <section>
+        <h3 className="text-2xl font-semibold text-center">Send a Message!</h3>
+        <p className="text-sm text-center">Get In Touch for OT Consultation</p>
+      </section>
+      <Form layout="vertical">
+        <Form.Item required>
+          <Input
+            placeholder="Full Name"
+            className="rounded-lg border-[1.5px] border-[#00BFFF] bg-transparent"
+            prefix={<FaUser />}
+          />
+        </Form.Item>
+        <Form.Item required>
+          <Input
+            placeholder="Email"
+            className="rounded-lg border-[1.5px] border-[#00BFFF] bg-transparent"
+            prefix={<MdMarkEmailUnread />}
+          />
+        </Form.Item>
+        <Form.Item required>
+          <TextArea
+            rows={3}
+            placeholder="type message ..."
+            className="rounded-lg border-[1.5px] border-[#00BFFF] bg-transparent"
+          />
+        </Form.Item>
+
+        <Button
+          type="primary"
+          className="h-12  w-full font-semibold"
+        >
+          Request Assessment <FaArrowCircleRight className="text-lg" />
+        </Button>
+      </Form>
+      <div className="grid text-[#404040] my-5 grid-cols-3 w-1/3 m-auto gap-6 mt-6">
+        <FaEnvelope className="text-xl text-[#404040] " />
+        <FaMapLocation className="text-xl" />
+        <FaPhone className="text-xl" />
+      </div>
     </div>
   );
 }

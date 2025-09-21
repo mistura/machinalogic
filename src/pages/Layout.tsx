@@ -1,22 +1,16 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage";
-import Header from "./layout/Header";
-import AboutUs from "./AboutUs";
-import Industries from "./Industries";
-import Solutions from "./Solutions";
-import Contact from "./Contact";
 import Footer from "./layout/Footer";
+import RouteList from "./RouteList";
+import Header from "./layout/Header";
 
 const Layout = () => {
   return (
     <div className="w-screen layout duration-300 shrink h-screen overflow-y-scroll overflow-x-hidden">
-      <Header />
+      <Header position={'fixed'} bg="bg-transparent" />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/industries" element={<Industries />} />
-        <Route path="/solutions" element={<Solutions />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/*" element={<RouteList/>} />
       </Routes>
       <Footer />
     </div>

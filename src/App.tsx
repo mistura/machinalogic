@@ -29,13 +29,13 @@ function App() {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: "#0275ff",
+          colorPrimary: "#00BFFF",
         },
       }}
     >
-      <div className="flex items-center bg-gray-100 main-wrapper">
+      <div className="flex items-center main-wrapper">
         <Layout />
-        <Nav />
+       <Nav /> 
       </div>
     </ConfigProvider>
   );

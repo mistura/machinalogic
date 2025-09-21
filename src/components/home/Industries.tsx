@@ -13,9 +13,9 @@ const Industries = () => {
   const LeftChildren = () => {
     return (
       <div
-        className={`flex flex-col md:grid md:grid-cols-2 gap-4 lg:gap-0 h-full w-full`}
+        className={` flex flex-col md:grid md:grid-cols-2 gap-4 lg:gap-0 md:h-screen h-fit`}
       >
-        {items.map((item) => (
+        {items.map((item, i) => (
           <motion.div
             initial={{ y: 200 }}
             whileInView={{ y: 0 }}
@@ -25,9 +25,9 @@ const Industries = () => {
               delay: 0,
               restSpeed: 0.5,
             }}
-            key={item.label}
+            key={i}
             className={twMerge(
-              `rounded-md lg:rounded-none overflow-hidden bg-white flex flex-col items-center justify-center hover:scale-90 duration-200 ease-in-out`,
+              `rounded-md lg:rounded-none md:overflow-hidden pt-5 bg-white md:flex md:flex-col items-center justify-center hover:scale-90 duration-200 ease-in-out`,
               (item.label.toLowerCase() === "oil and gas" ||
                 item.label.toLowerCase() === "banking") &&
                 "bg-gradient-to-tr from-purple-950 to bg-purple-600",
@@ -36,7 +36,7 @@ const Industries = () => {
           >
             <p
               className={twMerge(
-                `text-2xl font-black uppercase mt-12`,
+                `text-2xl font-black uppercase mt-16 text-black`,
                 (item.label.toLowerCase() === "oil and gas" ||
                   item.label.toLowerCase() === "banking") &&
                   "text-white"
@@ -47,7 +47,7 @@ const Industries = () => {
             <img
               src={item.icon}
               alt={item.label}
-              className="h-auto w-full object-contain mt-4"
+              className="md:h-auto w-full object-contain mt-4"
             />
           </motion.div>
         ))}
@@ -59,9 +59,10 @@ const Industries = () => {
     <AdjustedSectionLayout
       link="industries"
       leftChildren={<LeftChildren />}
-      textOne={"industries"}
+      textOne={"OT-Focused Industries"}
       textTwo={"we serve"}
-      bg=" bg-gradient-to-b from-purple-950 to bg-purple-600"
+      sectionBg=""
+      bg="bg-gradient-to-t from-[#84207F] to bg-[#571A55]   "
     />
   );
 };
@@ -77,6 +78,7 @@ export const AdjustedSectionLayout = (props: {
   textOne: string;
   textTwo: string;
   bg?: string;
+  sectionBg: string;
   logo?: string;
   showButton?: boolean;
   link?: string;
@@ -85,13 +87,13 @@ export const AdjustedSectionLayout = (props: {
   return (
     <div
       className={twMerge(
-        "lg:overflow-hidden section-shrink py-24 lg:py-0 lg:px-0 px-6",
+        "section lg:overflow-hidden  section-shrink py-24 lg:py-0 lg:px-0 px-6",
         props.bg
       )}
     >
       <div
         className={twMerge(
-          " w-full h-full grid lg:grid-cols-2 gap-28 items-center justify-between",
+          " w-full h-full grid lg:grid-cols-2 md:gap-0 gap-16 items-center justify-between",
           props.align && "items-start"
         )}
       >
@@ -100,18 +102,18 @@ export const AdjustedSectionLayout = (props: {
           whileInView={{ x: 0 }}
           transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
           className={twMerge(
-            "grid gap-6 lg:pl-12 xl:justify-center text-white",
-            props.textColor
+            "grid gap-6 lg:pl-12 xl:justify-center h-full content-center text-white ",
+            props.textColor, props.sectionBg ?? ''
           )}
         >
           <img
-            src={props.logo ? props.logo : "./logo-white.png"}
+            src={props.logo ? props.logo : "./newLogo-removebg-preview.png"}
             alt="machina logic cybersecurity company"
             className={`h-16`}
           />
           <p className="text-4xl lg:text-[50px] xl:text-[70px] text-left uppercase leading-none">
             {props.textOne}
-            <span className="font-black text-4xl lg:text-[60px] xl:text-[70px] flex items-end xl:mt-4">
+            <span className="font-black text-4xl lg:text-[60px] xl:text-[70px] flex items-end xl:mt-">
               {props.textTwo}
               <div
                 className={twMerge(
@@ -124,7 +126,7 @@ export const AdjustedSectionLayout = (props: {
           {props.showButton !== false && (
             <Button
               className={twMerge(
-                "w-[164px] h-12 font-bold text-base mt-8",
+                "w-[164px] h-12 font-bold text-base mt-8 bg-transparent text-white border-[1.6px]",
                 props.btnStyle
               )}
             >

@@ -42,7 +42,8 @@ const Contact = () => {
         textOne={"Get In"}
         textTwo={"touch"}
         extra={<Extra />}
-        showButton={false}
+        showButton={false} 
+        sectionBg={""}        
       />
       <motion.div
         initial={{ y: 200 }}
