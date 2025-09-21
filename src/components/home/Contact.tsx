@@ -1,8 +1,7 @@
-import { FaEnvelope, FaMapLocation, FaPhone } from "react-icons/fa6";
-import Map from "../Map";
-import { AdjustedSectionLayout } from "./Industries";
 import "mapbox-gl/dist/mapbox-gl.css";
 import ReactMapGL, { Marker } from "react-map-gl";
+import Map from "../Map";
+import { AdjustedSectionLayout } from "./Industries";
 
 
 const Contact = () => {
