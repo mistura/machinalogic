@@ -66,7 +66,8 @@ const rightSliderCards = [
 
 const ExpertSwiper = () => {
   return (
-    <div className="md:h-screen h-auto py-4 grid md:grid-cols-2 grid-cols-1 gap-x-2 overflow-hidden">
+   <section>
+     <div className="md:h-screen md:flex hidden h-auto py-4 grid md:grid-cols-2 grid-cols-1 gap-x-2 overflow-hidden">
       <Swiper
         direction="vertical"
         autoplay={{
@@ -143,6 +144,40 @@ const ExpertSwiper = () => {
         ))}
       </Swiper>
     </div>
+    <div className="block md:hidden">
+      <Swiper
+        direction="horizontal"
+        autoplay={{
+          delay: 7500,
+          disableOnInteraction: true,
+        }}
+        loop={true}
+        modules={[Autoplay]}
+        className="h-full "
+      >
+        {leftSliderCards.map((card) => (
+          <SwiperSlide key={card.id}>
+           <section className="space-y-2 h-full">
+
+            <div className="bg-white h-2/3 shadow-lg overflow-hidden flex flex-col">
+              <img
+                src={card.img}
+                alt={card.title}
+                className="h-60 w-full object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-black">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-gray-500">{card.description}</p>
+              </div>
+            </div>
+          </section>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+   </section>
   );
 };
 

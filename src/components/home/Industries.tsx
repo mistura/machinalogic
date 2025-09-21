@@ -93,7 +93,7 @@ export const AdjustedSectionLayout = (props: {
     >
       <div
         className={twMerge(
-          " w-full h-full grid lg:grid-cols-2 md:gap-0 gap-16 items-center justify-between",
+          " w-fulle grid lg:grid-cols-2 md:gap-0 gap-16 items-center ",
           props.align && "items-start"
         )}
       >

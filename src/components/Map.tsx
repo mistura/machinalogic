@@ -13,7 +13,7 @@ const { TextArea } = Input;
 
 function MapComponent() {
   return (
-    <div className="px-24 space-y-4 text-black ">
+    <div className="md:px-24 px-0 space-y-4 text-black ">
       <section>
         <h3 className="text-2xl font-semibold text-center">Send a Message!</h3>
         <p className="text-sm text-center">Get In Touch for OT Consultation</p>

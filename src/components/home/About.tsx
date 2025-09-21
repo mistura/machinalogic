@@ -4,7 +4,7 @@ import HeaderTitle from "../HeaderTitle";
 
 const About = () => {
   return (
-    <div className="section bg-gradient-to-br from-blue-900 to-blue-600 py-24 lg:py-48 xl:h-screen  section-shrink md:flex md:flex-col justify-center items-center px-6">
+    <div className="section py-24 lg:py-48 xl:h-screen  section-shrink md:flex md:flex-col justify-center items-center px-6">
       {/* <SectionLayout
         textOne={"Since"}
         textTwo={"2015"}

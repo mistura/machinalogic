@@ -7,7 +7,7 @@ import { AdjustedSectionLayout } from "./Industries";
 const Contact = () => {
   const Extra = () => {
     return (
-      <div className=" grid gap-6 mt-6">
+      <div className="  grid gap-6 mt-6">
          <ReactMapGL
                // mapLib={import("mapbox-gl")}
                initialViewState={{
