@@ -3,7 +3,6 @@ import Contact from "../components/home/Contact";
 import Expertise from "../components/home/Expertise";
 import Hero from "../components/home/Hero";
 import Industries from "../components/home/Industries";
-import { LargeScreenMenuIcon, Search } from "./layout/Header";
 
 const HomePage = () => {
   return (
