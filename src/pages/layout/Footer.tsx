@@ -61,10 +61,10 @@ const Footer = () => {
       initial={{ y: 200, opacity: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
-      className="p-4 py-8 xl:py-24 footer-gradient w-screen xl:flex flex-col justify-center items-center"
+      className="p-4 py-8 xl:py-24 footer-gradient xl:flex flex-col justify-center items-center"
     >
-      <div className="max-w-7xl w-full flex flex-col items-start lg:grid grid-cols-6 gap-6">
-        <div className="space-y-4 col-span-2 pt-12 lg:pt-0">
+      <div className="max-w-7xl w-full flex flex-col items-start lg:grid grid-cols-8 md:gap-4 gap-4">
+        <div className="space-y-4 col-span-3 pt-12 lg:pt-0 ">
           <img
             src={Logo}
             alt="machina logics"
@@ -76,12 +76,12 @@ const Footer = () => {
             protection, risk assessment and incident report.
           </p>
         </div>
-        <div className=" flex flex-col items-start lg:grid grid-cols-3 col-span-3 gap-6">
+        <div className=" flex flex-col  items-start lg:grid grid-cols-3 col-span-3 gap-6 md:gap-0">
           {menuItems.map((item) => (
             <FooterMenuItem item={item} key={item.title} />
           ))}
         </div>
-        <div className="">
+        <div className="col-span-2">
           <p className="text-lg font-semibold text-white uppercase">Contact</p>
           <motion.div
             initial={{ x: 200, opacity: 0 }}
@@ -90,14 +90,19 @@ const Footer = () => {
             className="mt-4 lg:mt-6 text-gray-300 grid gap-1"
           >
             {contactItems.map((item) => (
-              <div className="flex items-center gap-4 text-white">
+              <div className="flex items-center  gap-4 text-white">
                 {item.label} <span className="text-gray-300">{item.value}</span>
               </div>
             ))}
           </motion.div>
         </div>
       </div>
-      <div className="w-full flex flex-col justify-center items-center">
+
+
+
+
+
+      <div className="w-full  flex flex-col justify-center items-center">
         <motion.div
           initial={{ y: 200, opacity: 0 }}
           whileInView={{ opacity: 1, y: 0 }}

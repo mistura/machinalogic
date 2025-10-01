@@ -13,7 +13,7 @@ type Props = {
 
 const FooterMenuItem = (props: Props) => {
   return (
-    <div className="grid gap-2 lg:gap-6">
+    <div className="grid gap-1 lg:gap-6  ">
       <motion.p
         initial={{ y: -10, opacity: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
